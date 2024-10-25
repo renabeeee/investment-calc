@@ -93,10 +93,6 @@ def calculate_taxes():
         futures_short_term_tax = target_profit * 0.40 * 0.24  # 40% at 24% short-term
         futures_tax = futures_long_term_tax + futures_short_term_tax
 
-        # Additional taxes due to futures profits
-        additional_federal_tax = federal_tax_with_futures - federal_tax_without_futures
-        additional_state_tax = state_tax_with_futures - state_tax_without_futures
-
         # Calculate take-home future profits
         take_home_profit = target_profit - total_tax
 
