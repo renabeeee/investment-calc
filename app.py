@@ -97,9 +97,6 @@ def calculate_taxes():
         additional_federal_tax = federal_tax_with_futures - federal_tax_without_futures
         additional_state_tax = state_tax_with_futures - state_tax_without_futures
 
-# Total tax to withhold from futures
-        total_tax = additional_federal_tax + additional_state_tax
-
         # Calculate take-home future profits
         take_home_profit = target_profit - total_tax
 
