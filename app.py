@@ -152,7 +152,7 @@ def calculate_taxes():
         label_current_state_bracket.config(text="")
 
 
-# Create the main window
+# Main window
 app = ttk.Window(themename="flatly")
 app.title("California Futures Tax Withholding Calculator")
 # app.geometry("600x650")  # Increased width
@@ -203,12 +203,12 @@ label_total_tax = ttk.Label(app, text="", anchor='w')
 label_total_tax.config(font="-size 11 -weight bold")
 label_total_tax.pack(pady=15, padx=10, fill='x')
 
-label_take_home_profit = ttk.Label(app, text="", anchor='w')
-label_take_home_profit.pack(pady=5, padx=10, fill='x')
-
 # Separator line
 separator_line = ttk.Separator(app, orient='horizontal')
 separator_line.pack(pady=10, fill='x')
+
+label_take_home_profit = ttk.Label(app, text="", anchor='w')
+label_take_home_profit.pack(pady=5, padx=10, fill='x')
 
 # Separator line
 separator_line = ttk.Separator(app, orient='horizontal')
