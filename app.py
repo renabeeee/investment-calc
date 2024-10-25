@@ -93,6 +93,13 @@ def calculate_taxes():
         futures_short_term_tax = target_profit * 0.40 * 0.24  # 40% at 24% short-term
         futures_tax = futures_long_term_tax + futures_short_term_tax
 
+        # Additional taxes due to futures profits
+        additional_federal_tax = federal_tax_with_futures - federal_tax_without_futures
+        additional_state_tax = state_tax_with_futures - state_tax_without_futures
+
+# Total tax to withhold from futures
+        total_tax = additional_federal_tax + additional_state_tax
+
         # Calculate take-home future profits
         take_home_profit = target_profit - total_tax
 
@@ -107,6 +114,14 @@ def calculate_taxes():
             total_income_with_futures, federal_brackets)
         current_state_bracket = get_current_bracket(
             total_income_with_futures, state_brackets)
+
+        # Update the labels with formatted results
+        label_federal_tax.config(text=f"Federal Tax to Withhold for Futures: \n\n${
+                                 additional_federal_tax:,.2f}", font="-size 11", anchor='w')
+        label_state_tax.config(text=f"State Tax to Withhold for Futures: \n\n${
+                               additional_state_tax:,.2f}", font="-size 11", anchor='w')
+        label_total_tax.config(text=f"Total Tax to Withhold from Futures: \n\n${
+                               additional_federal_tax + additional_state_tax:,.2f}", font="-size 11", anchor='w')
 
 # Add the label for total take-home future profits
         label_take_home_profit.config(text=f"Total Take-Home Future Profits: \n\n${
