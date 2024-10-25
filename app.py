@@ -108,14 +108,6 @@ def calculate_taxes():
         current_state_bracket = get_current_bracket(
             total_income_with_futures, state_brackets)
 
-        # Update the labels with formatted results
-        label_federal_tax.config(text=f"Federal Tax to Withhold for Futures: \n\n${
-                                 additional_federal_tax:,.2f}", font="-size 11", anchor='w')
-        label_state_tax.config(text=f"State Tax to Withhold for Futures: \n\n${
-                               additional_state_tax:,.2f}", font="-size 11", anchor='w')
-        label_total_tax.config(text=f"Total Tax to Withhold from Futures: \n\n${
-                               additional_federal_tax + additional_state_tax:,.2f}", font="-size 11", anchor='w')
-
 # Add the label for total take-home future profits
         label_take_home_profit.config(text=f"Total Take-Home Future Profits: \n\n${
                                       take_home_profit:,.2f}", font="-size 11 -weight bold", anchor='w')
